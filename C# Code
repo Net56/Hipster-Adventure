@@ -1,0 +1,164 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+// Let us play a game.
+/* This is linear adventure to show off beginner skills learned in see-sharp. Be a man and continue forward! */
+
+namespace Joker
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(@"Welcome to Hipster Adventure!
+Press the Enter key to progress and enjoy...");
+            Console.ReadLine();
+
+            string name;
+
+            Console.WriteLine("What is your name?");
+            name = Console.ReadLine();
+
+            while (name == string.Empty)
+            {
+                Console.WriteLine("You didn't type in a name, fool! We're not moving forward until you do.");
+                Console.ReadLine();
+                Console.WriteLine("Now, what is your name?");
+                name = Console.ReadLine();
+            }
+
+            Console.WriteLine(name + ", huh? Think you're a cool guy, huh?");
+            Console.WriteLine("Well then, " + name.ToUpper() + ", get ready to feel the PAIN.");
+            Console.ReadLine();
+
+            // Made dragon an integer with a value of 99999 indicating it's health value.
+
+            int dragon = 99999;
+            string action;
+
+            Console.WriteLine(@"A dragon appears before you! All you wield is your selfie-stick and your jorts.
+Let's pretend you can win this fight. What do you do? 
+(attack/block/run like a pansy/sit) 
+(HINT: attack)");
+            action = Console.ReadLine();
+
+            do
+            {
+                switch (action)
+                {
+                    case "attack":
+                        Console.WriteLine(@"You smacked the dragon with your stick for 1 damage. Wtf is wrong with you...
+It's so surprised by your actions that you can act again!");
+                        Console.ReadLine();
+                        --dragon;
+                        break;
+                    case "block":
+                        Console.WriteLine(@"Yeah, okay. 
+The dragon's paw crushed your arms, your stick, your jorts, and your soul. GG.");
+                        Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
+                        Environment.Exit(0);
+                        break;
+                    case "run like a pansy":
+                        Console.WriteLine(@"Unsurprisingly, the dragon is faster than you. 
+Next time, don't wear punkass jorts.");
+                        Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
+                        Environment.Exit(0);
+                        break;
+                    case "sit":
+                        Console.WriteLine(@"You sat down and tried to look unmenacing. You put down your stick and
+looked at the dragon calmly. Perhaps he means no harm? There's no need
+to rush into pointless and frivolous violence like this. You pick up a
+flower and offer it to the dragon as a sign of peace. He eats you.");
+                        Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Come on, you have to do something. It's mandatory.");
+                        Console.ReadLine();
+                        Console.WriteLine("So, what do you do?");
+                        action = Console.ReadLine();
+                        break;
+                }
+            } while (dragon == 99999);
+
+            // Using Switch nested in Do-While statements to avoid flipping off the game if enter is pressed twice.
+            // Dragon loses 1 health from your attack.
+
+            if (dragon == 99998)
+            {
+                Console.WriteLine(@"What do you do this time? (attack/block/run like a pansy/sit)
+(HINT: run like a pansy)");
+                action = Console.ReadLine();
+            }
+
+            do
+            {
+                switch (action)
+                {
+                    case "attack":
+                        --dragon;
+                        Console.WriteLine(@"The dragon starts getting pissed at your insolence.
+He rears back and breathes flames. Right before they reach you,
+you think, ""how cliché"", and your hipster behind is promptly destroyed.");
+                        Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
+                        Environment.Exit(0);
+                        break;
+                    case "block":
+                        Console.WriteLine(@"The dragon stops taking you seriously and turns
+around to walk away. In it's clumsiness, it's tail hits you hard enough
+to fling you into the sunset.");
+                        Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
+                        Environment.Exit(0);
+                        break;
+                    case "run like a pansy":
+                        Console.WriteLine(@"The dragon was so stunned by your previous action that you were 
+able to get away safely. Lucky you! You whip out your phone and begin to make
+duckfaces at the camera in celebration.");
+                        Console.ReadLine();
+                        break;
+                    case "sit":
+                        Console.WriteLine(@"You sit down and relax. The dragon, deeming you safe, sits
+down with you. You two have a nice chat, and he offers you some tea.
+You inform him that the only tea you drink is a brand he's never heard of.
+The rest of the details are too gruesome to explain here...");
+                        Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Again, you have to do something. Come on.");
+                        Console.ReadLine();
+                        Console.WriteLine("So, what do you do this time?");
+                        action = Console.ReadLine();
+                        break;
+                }
+            } while (action != "run like a pansy");
+
+            Console.WriteLine("Congratulations! You managed to live! THE END! :D");
+            Console.ReadLine();
+            Console.WriteLine("The rest of this is just demo crap. Press Enter to see a simple For loop and then gtfo.");
+            Console.ReadLine();
+
+            for (int r = 5; r > 0; r = r - 1)
+            {
+                Console.WriteLine(r);
+                System.Threading.Thread.Sleep(1000);
+            }
+
+            Console.WriteLine(@"BOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOM!");
+            System.Threading.Thread.Sleep(1000);
+        }
+    }
+}
